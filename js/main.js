@@ -8,12 +8,12 @@ addItems.addEventListener('submit', addItem);
 itemList.addEventListener('click', toggleDone);
 
 function addItem(e) {
-  e.preventDEfault();
+  e.preventDefault();
   const text = (this.querySelector('[name=item]')).value;
   const item = {
-    text: 'Item Name',
+    text,
     done: false
-  }
+  };
   console.log(item);
   items.push(item);
   populateList(items, itemList);
@@ -31,6 +31,7 @@ function populateList(plates = [], platesList) {
     `;
   }).join('');
 }
+populateList();
 
 function toggleDone(e) {
   if (!e.target.matches('input')) return;
