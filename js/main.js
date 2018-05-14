@@ -16,7 +16,7 @@ function addItem(e) {
   };
   console.log(item);
   items.push(item);
-  populateList(items, itemList);
+  populateList(items, itemsList);
   localStorage.setItem('items', JSON.stringify(items));
   this.reset();
 }
@@ -31,7 +31,6 @@ function populateList(plates = [], platesList) {
     `;
   }).join('');
 }
-populateList();
 
 function toggleDone(e) {
   if (!e.target.matches('input')) return;
